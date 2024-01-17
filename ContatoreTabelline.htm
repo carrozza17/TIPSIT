@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContatoreTabelline</title>
+</head>
+<body>
+
+<script>
+    var counter = 1;
+
+    function printTable(number) {
+        document.write("<h3>Tabellina del " + number + ":</h3>");
+        for (var i = 1; i <= 10; i++) {
+            document.write("<p>" + number + " x " + i + " = " + (number * i) + "</p>");
+        }
+    }
+
+    function updateCounter() {
+        if (counter <= 5) {
+            document.write("<h2>Contatore: " + counter + "</h2>");
+            counter++;
+
+            if (counter > 5) {
+
+                printTable(1);
+                printTable(2);
+                printTable(3);
+                printTable(4);
+                printTable(5);
+                printTable(6);
+                printTable(7);
+                printTable(8);
+                printTable(9);
+                printTable(10);
+            }
+        }
+    }
+
+    setInterval(updateCounter, 1000);
+</script>
+
+</body>
+</html>
