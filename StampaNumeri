@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stampa Numeri</title>
+</head>
+<body>
+
+  <label for="numeroInput">Inserisci un numero:</label>
+  <input type="number" id="numeroInput" min="1" required>
+  <button onclick="stampaNumeri()">Stampa Numeri</button>
+
+  <div id="output"></div>
+
+  <script>
+    function stampaNumeri() {
+      var inputNumero = parseInt(document.getElementById('numeroInput').value);
+
+      if (isNaN(inputNumero) || inputNumero < 1) {
+        alert("Inserisci un numero valido maggiore di 0.");
+        return;
+      }
+
+      var outputString = '';
+
+      for (var i = 1; i <= inputNumero; i++) {
+        outputString += i + '<br>';
+      }
+
+      var percentuale10 = inputNumero * 0.1;
+
+      outputString += '<br>Il 10% di ' + inputNumero + ' è: ' + percentuale10;
+
+      document.getElementById('output').innerHTML = outputString;
+    }
+  </script>
+
+</body>
+</html>
