@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generatore Div</title>
+</head>
+<body>
+
+  <label for="numeroDiv">Inserisci numero:</label>
+  <input type="number" id="numeroDiv" min="1" value="1">
+  <button onclick="generaDiv()">Genera</button>
+
+  <script>
+    function generaDiv() {
+      // Ottieni il numero inserito dall'utente
+      var numeroDiv = document.getElementById("numeroDiv").value;
+
+      // Ottieni l'elemento in cui inserire i div
+      var container = document.body;
+
+      // Rimuovi eventuali div già presenti
+      container.innerHTML = '';
+
+      // Crea e aggiungi n div al container
+      for (var i = 0; i < numeroDiv; i++) {
+        var div = document.createElement("div");
+        div.className = "square"; // Aggiungi la classe "square" per lo stile
+        container.appendChild(div);
+      }
+    }
+  </script>
+
+  <style>
+    .square {
+      width: 10px;
+      height: 10px;
+      border: 1px solid black;
+      display: inline-block;
+      margin: 5px; /* Aggiunge margine tra i quadrati */
+    }
+  </style>
+
+</body>
+</html>
