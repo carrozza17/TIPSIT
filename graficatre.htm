@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quadrati Pari e Dispari</title>
+</head>
+<body>
+
+  <script>
+    // Funzione per creare il quadrato con le specifiche richieste
+    function creaQuadrato(numero) {
+      var container = document.body;
+      var div = document.createElement("div");
+
+      div.className = "square";
+
+      if (numero % 2 === 0) {
+        div.style.backgroundColor = "#f0f0f0"; // Sfondo grigio chiaro per numeri pari
+      } else {
+        div.style.backgroundColor = "#888"; // Sfondo grigio scuro per numeri dispari
+      }
+
+      container.appendChild(div);
+    }
+
+    // Esegui un ciclo da 1 a 100 e crea i quadrati
+    for (var i = 1; i <= 100; i++) {
+      creaQuadrato(i);
+
+      // Vai a capo ogni 10 quadrati
+      if (i % 10 === 0) {
+        document.body.appendChild(document.createElement("br"));
+      }
+    }
+  </script>
+
+  <style>
+    .square {
+      width: 10px;
+      height: 10px;
+      border: 1px solid black;
+      display: inline-block;
+      margin: 2px;
+    }
+  </style>
+
+</body>
+</html>
