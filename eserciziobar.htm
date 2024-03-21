@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Drink</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="carrello"></p>
+    <button onclick="aggiungiDrink()">Aggiungi drink</button>
+    <button onclick="cancellaDrink()">Cancella drink</button>
+    <button onclick="contaDrink()">Conta drink</button>
+    <button onclick="ordinaDrink()">Ordina drink</button>
+    <p>Numero drink nel menu: <span id="contaDrink"></span></p>
+
+    <script>
+      const drinks = ["coca", "spritz", "sprite", "fanta", "birra", "belvedere", "martini"];
+      const carrello = [];
+
+      document.getElementById("demo").innerHTML = "Drinks: " + drinks.join(", ");
+
+      function contaDrink() {
+        document.getElementById("contaDrink").textContent = drinks.length;
+      }
+
+      function aggiungiDrink() {
+        let drink = prompt("Inserisci il nome del drink:");
+        if (drink) {
+          drinks.push(drink.toLowerCase());
+          document.getElementById("demo").innerHTML = "Drinks: " + drinks.join(", ");
+        }
+      }
+
+      function cancellaDrink() {
+        drinks.pop();
+        document.getElementById("demo").innerHTML = "Drinks: " + drinks.join(", ");
+      }
+
+      function ordinaDrink() {
+        let index = prompt("Inserisci il numero del drink da ordinare (da 1 a " + drinks.length + "):");
+        if (index && !isNaN(index) && index >= 1 && index <= drinks.length) {
+          let drinkOrdinato = drinks[index - 1];
+          carrello.push(drinkOrdinato);
+          document.getElementById("carrello").innerHTML = "Carrello: " + carrello.join(", ");
+        } else {
+          alert("Inserisci un numero valido.");
+        }
+      }
+    </script>
+</body>
+</html>
